@@ -2,6 +2,7 @@ package developerScreen;
 
 import javax.swing.*;
 
+// 데이터 선택 화면에서의 돌아가기 버튼과 동일
 public class ReturnButtonPanel extends JPanel {
     public ReturnButtonPanel() {
         this.setLayout(null);
