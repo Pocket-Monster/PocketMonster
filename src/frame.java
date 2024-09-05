@@ -1,4 +1,4 @@
-import developerScreen.mainScreenPanel;
+import mainScreen.mainScreenPanel;
 
 import javax.swing.*;
 
@@ -13,7 +13,6 @@ public class frame extends JFrame {
 
     public static void main(String[] args) {
         frame frame = new frame();
-        //mainScreenPanel mainScreenPanel = new mainScreenPanel();
         mainScreenPanel mainScreenPanel = new mainScreenPanel();
         frame.add(mainScreenPanel);
 
