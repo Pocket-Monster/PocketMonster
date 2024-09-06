@@ -1,4 +1,4 @@
-package selectpokemon;
+package selectPokemon;
 
 import javax.swing.*;
 

@@ -1,5 +1,6 @@
-import mainScreen.mainScreenPanel;
+package selectPokemon;
 
+import selectPokemon.mainScreenPanel;
 import javax.swing.*;
 
 public class frame extends JFrame {
