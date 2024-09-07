@@ -32,7 +32,7 @@ public class mainScreenPanel extends JPanel {
         }
 
         VerticalButtonPanel verticalButtonPanel = new VerticalButtonPanel(frame);
-        DeveloperButtonPanel developerButtonPanel = new DeveloperButtonPanel();
+        DeveloperButtonPanel developerButtonPanel = new DeveloperButtonPanel(frame);
 
         // 메인 패널에 버튼 패널들 추가
         this.setLayout(new BorderLayout());
