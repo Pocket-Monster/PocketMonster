@@ -13,11 +13,11 @@ public class mainScreenPanel extends JPanel {
     final int screenWidth = tileSize * maxScreenCol; // 768 pixels
     final int screenHeight = tileSize * maxScreenRow; // 576 pixels
 
-    public mainScreenPanel() {
+    public mainScreenPanel(JFrame frame) {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
 
         TextPanel textPanel = new TextPanel();
-        ReturnButtonPanel returnButtonPanel = new ReturnButtonPanel();
+        ReturnButtonPanel returnButtonPanel = new ReturnButtonPanel(frame);
 
         // 메인 패널에 버튼 패널들 추가
         this.setLayout(new BorderLayout());
