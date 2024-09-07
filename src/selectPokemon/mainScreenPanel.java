@@ -15,8 +15,6 @@ public class mainScreenPanel extends JPanel {
 
     public mainScreenPanel(JFrame frame) {
 
-        //프레임 사이즈 조절 못하도록 설정
-        frame.setResizable(false);
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         //전체 패널
         setLayout(new BorderLayout());

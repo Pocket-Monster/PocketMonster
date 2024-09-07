@@ -13,6 +13,8 @@ public class frame extends JFrame {
 
     public static void main(String[] args) {
         frame frame = new frame();
+        //프레임 사이즈 조절 못하도록 설정
+        frame.setResizable(false);
         mainScreenPanel mainScreenPanel = new mainScreenPanel(frame);
         frame.add(mainScreenPanel);
 
