@@ -22,6 +22,8 @@ public class mainScreenPanel extends JPanel {
 
         // JFrame의 크기를 이 사이즈에 맞추게 됨
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
+        //프레임 사이즈 조절 못하도록 설정
+        frame.setResizable(false);
 
         // 배경화면으로 사용할 이미지 read
         try {
