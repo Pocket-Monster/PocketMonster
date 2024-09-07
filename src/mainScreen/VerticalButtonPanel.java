@@ -32,7 +32,7 @@ public class VerticalButtonPanel extends JPanel {
         button_load.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JPanel switchToSelectDatePanel = new selectDateScreen.mainScreenPanel();
+                JPanel switchToSelectDatePanel = new selectDataScreen.mainScreenPanel();
                 SwitchPanel.switchPanel(frame, switchToSelectDatePanel);
             }
         });
