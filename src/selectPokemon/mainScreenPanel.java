@@ -13,7 +13,7 @@ public class mainScreenPanel extends JPanel {
     final int screenWidth = tileSize * maxScreenCol; // 768 pixels
     final int screenHeight = tileSize * maxScreenRow; // 576 pixels
 
-    public mainScreenPanel() {
+    public mainScreenPanel(JFrame frame) {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
     //전체 패널
