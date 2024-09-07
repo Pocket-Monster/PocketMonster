@@ -36,5 +36,13 @@ public class VerticalButtonPanel extends JPanel {
                 SwitchPanel.switchPanel(frame, switchToSelectDatePanel);
             }
         });
+
+        button_new.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JPanel switchToSelectDatePanel = new selectPokemon.mainScreenPanel(frame);
+                SwitchPanel.switchPanel(frame, switchToSelectDatePanel);
+            }
+        });
     }
 }
