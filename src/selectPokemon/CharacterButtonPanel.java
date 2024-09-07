@@ -9,7 +9,7 @@ public class CharacterButtonPanel extends JPanel {
     public CharacterButtonPanel() {
 
         //피카츄 버튼
-        ImageIcon pikachuIcon = new ImageIcon("C:/Users/yunjeong/Desktop/PocketMonster/src/img/피카츄.png");
+        ImageIcon pikachuIcon = new ImageIcon("src/img/피카츄.png");
         JButton pikachuButton = new JButton(pikachuIcon);
         pikachuButton.setBorderPainted(false); // 버튼 테두리 제거
         pikachuButton.setContentAreaFilled(false); // 버튼 배경 제거
@@ -17,7 +17,7 @@ public class CharacterButtonPanel extends JPanel {
         pikachuButton.setOpaque(true);
 
         //꼬부기 버튼
-        ImageIcon squirtleIcon = new ImageIcon("C:/Users/yunjeong/Desktop/PocketMonster/img/꼬부기.png");
+        ImageIcon squirtleIcon = new ImageIcon("src/img/꼬부기.png");
         JButton squirtlebutton = new JButton(squirtleIcon);
         squirtlebutton.setBorderPainted(false);
         squirtlebutton.setContentAreaFilled(false);
@@ -25,7 +25,7 @@ public class CharacterButtonPanel extends JPanel {
         squirtlebutton.setOpaque(true);
 
         //이상해씨 버튼
-        ImageIcon bulbasaurIcon = new ImageIcon("C:/Users/yunjeong/Desktop/PocketMonster/img/이상해씨.png");
+        ImageIcon bulbasaurIcon = new ImageIcon("src/img/이상해씨.png");
         JButton bulbasaurButton = new JButton(bulbasaurIcon);
         bulbasaurButton.setBorderPainted(false);
         bulbasaurButton.setContentAreaFilled(false);
