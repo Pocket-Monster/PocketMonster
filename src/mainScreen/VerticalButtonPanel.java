@@ -1,9 +1,15 @@
 package mainScreen;
 
+import funtions.SwitchPanel;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class VerticalButtonPanel extends JPanel {
-    public VerticalButtonPanel() {
+
+    public VerticalButtonPanel(JFrame frame) {
+
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setOpaque(false); // 투명 배경으로 설정
 
@@ -20,5 +26,15 @@ public class VerticalButtonPanel extends JPanel {
         this.add(Box.createVerticalStrut(30)); // 버튼 사이에 빈 공간 생성
         this.add(button_load);
         this.add(Box.createVerticalGlue()); // 하단에 빈 공간 추가
+
+        // 이벤트 처리
+
+        button_load.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JPanel switchToSelectDatePanel = new selectDateScreen.mainScreenPanel();
+                SwitchPanel.switchPanel(frame, switchToSelectDatePanel);
+            }
+        });
     }
 }

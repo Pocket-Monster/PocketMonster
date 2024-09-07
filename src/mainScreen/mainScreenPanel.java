@@ -3,9 +3,7 @@ package mainScreen;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 public class mainScreenPanel extends JPanel {
     final int originalTileSize = 16; // 16x16 tile
@@ -20,7 +18,8 @@ public class mainScreenPanel extends JPanel {
     private Image backgroundImg;
 
     // Panel의 초기 설정, 컴포넌트 추가
-    public mainScreenPanel() {
+    public mainScreenPanel(JFrame frame) {
+
         // JFrame의 크기를 이 사이즈에 맞추게 됨
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
 
@@ -32,7 +31,7 @@ public class mainScreenPanel extends JPanel {
             e.printStackTrace();
         }
 
-        VerticalButtonPanel verticalButtonPanel = new VerticalButtonPanel();
+        VerticalButtonPanel verticalButtonPanel = new VerticalButtonPanel(frame);
         DeveloperButtonPanel developerButtonPanel = new DeveloperButtonPanel();
 
         // 메인 패널에 버튼 패널들 추가
