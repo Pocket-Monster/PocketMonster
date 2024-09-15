@@ -1,6 +1,8 @@
+import databaseCon.Connect;
 import selectPokemon.mainScreenPanel;
 
 import javax.swing.*;
+import java.sql.SQLException;
 
 public class frame extends JFrame {
 
@@ -11,7 +13,7 @@ public class frame extends JFrame {
         setResizable(false);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         frame frame = new frame();
 
         mainScreenPanel mainScreenPanel = new mainScreenPanel(frame);
@@ -25,5 +27,9 @@ public class frame extends JFrame {
 
         //프레임 보이기
         frame.setVisible(true);
+
+        //데이터 베이스 테스트
+        Connect con = new Connect();
+
     }
 }
