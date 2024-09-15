@@ -1,4 +1,4 @@
-import selectPokemon.mainScreenPanel;
+import mainScreen.mainScreenPanel;
 
 import javax.swing.*;
 
