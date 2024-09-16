@@ -25,7 +25,7 @@ public class mainScreenPanel extends JPanel {
 
         // 배경화면으로 사용할 이미지 read
         try {
-            backgroundImg = ImageIO.read((getClass().getClassLoader().getResourceAsStream("img/3Pocketmon_background.png")));
+            backgroundImg = ImageIO.read((getClass().getClassLoader().getResourceAsStream("img/Title Screen Background.png")));
         }
         catch (IOException e) {
             e.printStackTrace();
