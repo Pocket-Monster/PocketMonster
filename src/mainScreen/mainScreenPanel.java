@@ -30,9 +30,10 @@ public class mainScreenPanel extends JPanel {
         catch (IOException e) {
             e.printStackTrace();
         }
+        BackgroundMusic backgroundMusic = new BackgroundMusic();
 
-        VerticalButtonPanel verticalButtonPanel = new VerticalButtonPanel(frame);
-        DeveloperButtonPanel developerButtonPanel = new DeveloperButtonPanel(frame);
+        VerticalButtonPanel verticalButtonPanel = new VerticalButtonPanel(frame, backgroundMusic);
+        DeveloperButtonPanel developerButtonPanel = new DeveloperButtonPanel(frame, backgroundMusic);
 
         // 메인 패널에 버튼 패널들 추가
         this.setLayout(new BorderLayout());
@@ -41,6 +42,9 @@ public class mainScreenPanel extends JPanel {
         // 개발자들 버튼이 화면에서 안 보이는 이슈
         // 높이를 지정함으로써 해결
         developerButtonPanel.setPreferredSize(new Dimension(screenWidth, 100));
+
+        //배경 음악
+        backgroundMusic.playBackgroundMusic("src/sounds/On My Way.wav");
     }
 
     // 패널 배경화면에 이미지 삽입
