@@ -1,12 +1,13 @@
 package selectPokemon;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 // 포켓몬 영어 이름 : Pikachu(피카츄), Squirtle(꼬부기), Bulbasaur(이상해씨)
 
 public class CharacterButtonPanel extends JPanel {
-    public CharacterButtonPanel() {
+    public CharacterButtonPanel(JFrame frame) {
 
         //피카츄 버튼
         ImageIcon pikachuIcon = new ImageIcon("src/img/피카츄.png");
@@ -15,6 +16,7 @@ public class CharacterButtonPanel extends JPanel {
         pikachuButton.setContentAreaFilled(false); // 버튼 배경 제거
         pikachuButton.setFocusPainted(false); // 버튼 클릭 시 표시 제거
         pikachuButton.setOpaque(true);
+
 
         //꼬부기 버튼
         ImageIcon squirtleIcon = new ImageIcon("src/img/꼬부기.png");
@@ -31,6 +33,46 @@ public class CharacterButtonPanel extends JPanel {
         bulbasaurButton.setContentAreaFilled(false);
         bulbasaurButton.setFocusPainted(false);
         bulbasaurButton.setOpaque(true);
+
+        // 피카츄 버튼에 이벤트 추가
+        pikachuButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int result = JOptionPane.showConfirmDialog(frame, "피카츄를 선택하셨습니다. 계속하시겠습니까?", "확인", JOptionPane.YES_NO_OPTION);
+                if (result == JOptionPane.YES_OPTION) {
+                    System.out.println("피카츄 선택");
+                } else {
+                    System.out.println("다시 선택하세요.");
+                }
+            }
+        });
+
+        // 꼬부기 버튼에 이벤트 추가
+        squirtlebutton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int result = JOptionPane.showConfirmDialog(frame, "꼬부기를 선택하셨습니다. 계속하시겠습니까?", "확인", JOptionPane.YES_NO_OPTION);
+                if (result == JOptionPane.YES_OPTION) {
+                    System.out.println("꼬부기 선택");
+                } else {
+                    System.out.println("다시 선택하세요.");
+                }
+            }
+        });
+
+        // 이상해씨 버튼에 이벤트 추가
+        bulbasaurButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int result = JOptionPane.showConfirmDialog(frame, "이상해씨를 선택하셨습니다. 계속하시겠습니까?", "확인", JOptionPane.YES_NO_OPTION);
+                if (result == JOptionPane.YES_OPTION) {
+                    System.out.println("이상해씨 선택");
+                } else {
+                    System.out.println("다시 선택하세요.");
+                }
+            }
+        });
+
 
         this.add(pikachuButton);
         this.add(squirtlebutton);

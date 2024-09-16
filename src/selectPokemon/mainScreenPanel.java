@@ -20,7 +20,7 @@ public class mainScreenPanel extends JPanel {
         setLayout(new BorderLayout());
 
         //패널 생성
-        CharacterButtonPanel characterButtonPanel = new CharacterButtonPanel();
+        CharacterButtonPanel characterButtonPanel = new CharacterButtonPanel(frame);
         StrengthPanel strengthPanel = new StrengthPanel();
         ReturnButtonWithLabelPanel returnButtonWithLabelPanel = new ReturnButtonWithLabelPanel(frame);
 
