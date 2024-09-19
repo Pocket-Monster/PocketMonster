@@ -8,10 +8,13 @@ import java.awt.event.ActionListener;
 
 public class VerticalButtonPanel extends JPanel {
 
-    public VerticalButtonPanel(JFrame frame) {
+    private BackgroundMusic backgroundMusic;  // 동일한 BackgroundMusic 인스턴스를 참조
+
+    public VerticalButtonPanel(JFrame frame, BackgroundMusic backgroundMusic) {
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setOpaque(false); // 투명 배경으로 설정
+        this.backgroundMusic = backgroundMusic;
 
         // 버튼 생성
         JButton button_new = new JButton("새게임");
@@ -32,6 +35,7 @@ public class VerticalButtonPanel extends JPanel {
         button_load.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                backgroundMusic.stopBackgroundMusic(); ////패널 전환 시 음악 중지 및 새로운 패널 추가
                 JPanel switchToSelectDatePanel = new selectDataScreen.mainScreenPanel(frame);
                 SwitchPanel.switchPanel(frame, switchToSelectDatePanel);
             }
@@ -40,6 +44,7 @@ public class VerticalButtonPanel extends JPanel {
         button_new.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                backgroundMusic.stopBackgroundMusic();
                 JPanel switchToSelectDatePanel = new selectPokemon.mainScreenPanel(frame);
                 SwitchPanel.switchPanel(frame, switchToSelectDatePanel);
             }

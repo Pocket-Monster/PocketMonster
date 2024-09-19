@@ -1,5 +1,5 @@
+import mainScreen.mainScreenPanel;
 import databaseCon.Connect;
-import selectPokemon.mainScreenPanel;
 
 import javax.swing.*;
 import java.sql.SQLException;
