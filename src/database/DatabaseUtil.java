@@ -21,10 +21,11 @@ public class DatabaseUtil {
         }
     }
 
+    // 데이터 저장
     public void saveData(){
         try{
-            String sql = "INSERT INTO playerId(data_name) VALUES(?)";
-            pstmt = conn.prepareStatement(sql);
+            String saveSql = "INSERT INTO playerId(data_name) VALUES(?)";
+            pstmt = conn.prepareStatement(saveSql);
             pstmt.setString(1, "TEST");
             int result = pstmt.executeUpdate();
             if(result == 1){
@@ -35,10 +36,11 @@ public class DatabaseUtil {
         }
     }
 
+    // 데이터 불러오기
     public void loadData(){
         try {
-            String sql = "SELECT * FROM playerId";
-            pstmt = conn.prepareStatement(sql);
+            String loadSql = "SELECT * FROM playerId";
+            pstmt = conn.prepareStatement(loadSql);
             rs = pstmt.executeQuery();
             while(rs.next()){
                 String dataNo = rs.getString("data_no");
@@ -46,7 +48,22 @@ public class DatabaseUtil {
                 System.out.println(dataNo + " 및 " + dataName);
             }
         } catch (SQLException e) {
-            System.out.println("Database 저장 실패");
+            System.out.println("데이터 불러오기 실패");
+        }
+    }
+
+    // 데이터 삭제하기
+    public void deleteData(){
+        try{
+            String deleteSql = "DELETE FROM playerId WHERE data_no = ?";
+            pstmt = conn.prepareStatement(deleteSql);
+            pstmt.setString(1, "12");
+            int result = pstmt.executeUpdate();
+            if(result == 1){
+                System.out.println("데이터 삭제 성공");
+            }
+        } catch (Exception e) {
+            System.out.println("데이터 삭제 실패");
         }
     }
 }
