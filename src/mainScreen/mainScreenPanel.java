@@ -1,5 +1,7 @@
 package mainScreen;
 
+import sounds.PlayMusic;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -30,10 +32,11 @@ public class mainScreenPanel extends JPanel {
         catch (IOException e) {
             e.printStackTrace();
         }
-        BackgroundMusic backgroundMusic = new BackgroundMusic();
+        PlayMusic backgroundMusic = new PlayMusic();
+        PlayMusic buttonClickMusic = new PlayMusic();
 
-        VerticalButtonPanel verticalButtonPanel = new VerticalButtonPanel(frame, backgroundMusic);
-        DeveloperButtonPanel developerButtonPanel = new DeveloperButtonPanel(frame, backgroundMusic);
+        VerticalButtonPanel verticalButtonPanel = new VerticalButtonPanel(frame, backgroundMusic, buttonClickMusic);
+        DeveloperButtonPanel developerButtonPanel = new DeveloperButtonPanel(frame, backgroundMusic, buttonClickMusic);
 
         // 메인 패널에 버튼 패널들 추가
         this.setLayout(new BorderLayout());

@@ -1,5 +1,7 @@
 package selectPokemon;
 
+import sounds.PlayMusic;
+
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -7,7 +9,7 @@ import java.awt.event.MouseEvent;
 // 포켓몬 영어 이름 : Pikachu(피카츄), Squirtle(꼬부기), Bulbasaur(이상해씨)
 
 public class CharacterButtonPanel extends JPanel {
-    public CharacterButtonPanel(JFrame frame) {
+    public CharacterButtonPanel(JFrame frame, PlayMusic buttonClickMusic) {
 
         //피카츄 버튼
         ImageIcon pikachuIcon = new ImageIcon("src/img/피카츄.png");
@@ -45,6 +47,9 @@ public class CharacterButtonPanel extends JPanel {
                 } else {
                     System.out.println("다시 선택하세요.");
                 }
+                new Thread(()->{
+                    buttonClickMusic.playEffectSound("sounds/buttonClick.wav");
+                }).start();
             }
         });
 
@@ -59,6 +64,9 @@ public class CharacterButtonPanel extends JPanel {
                 } else {
                     System.out.println("다시 선택하세요.");
                 }
+                new Thread(()->{
+                    buttonClickMusic.playEffectSound("sounds/buttonClick.wav");
+                }).start();
             }
         });
 
@@ -73,6 +81,9 @@ public class CharacterButtonPanel extends JPanel {
                 } else {
                     System.out.println("다시 선택하세요.");
                 }
+                new Thread(()->{
+                    buttonClickMusic.playEffectSound("sounds/buttonClick.wav");
+                }).start();
             }
         });
 

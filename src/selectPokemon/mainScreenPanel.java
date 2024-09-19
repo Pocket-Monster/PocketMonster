@@ -1,5 +1,7 @@
 package selectPokemon;
 
+import sounds.PlayMusic;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,12 +17,13 @@ public class mainScreenPanel extends JPanel {
 
     public mainScreenPanel(JFrame frame) {
 
+        PlayMusic buttonClickMusic = new PlayMusic();
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         //전체 패널
         setLayout(new BorderLayout());
 
         //패널 생성
-        CharacterButtonPanel characterButtonPanel = new CharacterButtonPanel(frame);
+        CharacterButtonPanel characterButtonPanel = new CharacterButtonPanel(frame, buttonClickMusic);
         StrengthPanel strengthPanel = new StrengthPanel();
         ReturnButtonWithLabelPanel returnButtonWithLabelPanel = new ReturnButtonWithLabelPanel(frame);
 

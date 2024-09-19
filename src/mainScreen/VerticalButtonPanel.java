@@ -1,6 +1,7 @@
 package mainScreen;
 
 import funtions.SwitchPanel;
+import sounds.PlayMusic;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -8,9 +9,9 @@ import java.awt.event.ActionListener;
 
 public class VerticalButtonPanel extends JPanel {
 
-    private BackgroundMusic backgroundMusic;  // 동일한 BackgroundMusic 인스턴스를 참조
+    private PlayMusic backgroundMusic;  // 동일한 BackgroundMusic 인스턴스를 참조
 
-    public VerticalButtonPanel(JFrame frame, BackgroundMusic backgroundMusic) {
+    public VerticalButtonPanel(JFrame frame, PlayMusic backgroundMusic, PlayMusic buttonClickMusic) {
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setOpaque(false); // 투명 배경으로 설정
@@ -38,6 +39,9 @@ public class VerticalButtonPanel extends JPanel {
                 backgroundMusic.stopBackgroundMusic(); ////패널 전환 시 음악 중지 및 새로운 패널 추가
                 JPanel switchToSelectDatePanel = new selectDataScreen.mainScreenPanel(frame);
                 SwitchPanel.switchPanel(frame, switchToSelectDatePanel);
+                new Thread(()->{
+                    buttonClickMusic.playEffectSound("sounds/buttonClick.wav");
+                }).start();
             }
         });
 
@@ -47,6 +51,9 @@ public class VerticalButtonPanel extends JPanel {
                 backgroundMusic.stopBackgroundMusic();
                 JPanel switchToSelectDatePanel = new selectPokemon.mainScreenPanel(frame);
                 SwitchPanel.switchPanel(frame, switchToSelectDatePanel);
+                new Thread(()->{
+                    buttonClickMusic.playEffectSound("sounds/buttonClick.wav");
+                }).start();
             }
         });
     }
