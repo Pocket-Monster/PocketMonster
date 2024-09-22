@@ -94,7 +94,7 @@ public class CharacterButtonPanel extends JPanel {
         //지도 화면 전환 메서드
         private void switchToMapPanel(JFrame frame) {
             frame.getContentPane().removeAll(); // 기존 패널 제거
-            frame.getContentPane().add(new MapPanel()); // 새로운 지도 패널 추가
+            frame.getContentPane().add(new MapPanel(frame)); // 새로운 지도 패널 추가
             frame.revalidate(); // 패널 업데이트
             frame.repaint(); // 패널 다시 그리기
 
