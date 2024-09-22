@@ -17,7 +17,7 @@ public class Npc extends Entity{
         } else {
             System.out.println("감사합니다.");
             // 상점 밖으로 나가기 로직
-            player.leaveShop();
+           // player.leaveShop();
         }
 
 
