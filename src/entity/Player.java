@@ -1,5 +1,6 @@
 package entity;
 
+import character.ImageLoader;
 import storeScreen.StorePanel;
 
 import javax.imageio.ImageIO;
@@ -35,25 +36,20 @@ public class Player extends Entity {
     }
 
     public void getPlayerImage() {
-        try {
-            up1 = ImageIO.read(getClass().getResourceAsStream("src/img/character/back1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("src/img/character/back2.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("src/img/character/frant1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("src/img/character/frant2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("src/img/character/left1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("src/img/character/left2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("src/img/character/right1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("src/img/character/right2.png"));
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        up1 = ImageLoader.loadImage("src/img/character/back1.png");
+        up2 = ImageLoader.loadImage("src/img/character/back2.png");
+        down1 = ImageLoader.loadImage("src/img/character/front1.png");
+        down2 = ImageLoader.loadImage("src/img/character/front2.png");
+        left1 = ImageLoader.loadImage("src/img/character/left1.png");
+        left2 = ImageLoader.loadImage("src/img/character/left2.png");
+        right1 = ImageLoader.loadImage("src/img/character/right1.png");
+        right2 = ImageLoader.loadImage("src/img/character/right2.png");
 
     }
 
     public void update() {
-        if (keyH.moveUp == true || keyH.moveDown || keyH.moveLeft || keyH.moveRight) {
-            if (keyH.moveUp == true) {
+        if (keyH.moveUp|| keyH.moveDown || keyH.moveLeft || keyH.moveRight) {
+            if (keyH.moveUp==true) {
                 direction = "up";
                 y -= speed;
             } else if (keyH.moveDown == true) {
@@ -79,6 +75,7 @@ public class Player extends Entity {
         }
 
     }
+    /*
     public void buy (String item){
         inventory.add(item);
         System.out.println(item + "을 구매 ");
@@ -106,9 +103,7 @@ public class Player extends Entity {
 
     }
     public void setCoin(){
-
-
-    }
+    }*/
 
     public void draw (Graphics2D g2){
         BufferedImage image = null;
