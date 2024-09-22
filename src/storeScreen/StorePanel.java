@@ -20,12 +20,14 @@ public class StorePanel extends JPanel implements Runnable {
 
     //FPS
     int FPS=60;
-    KeyHandler keyH=new KeyHandler();
 
+    KeyHandler keyH=new KeyHandler();
     Thread storeThread;
     Player player=new Player(this,keyH,0);
 
-    public StorePanel() {
+
+    public StorePanel(JFrame frame) {
+
         this.setPreferredSize(new Dimension(screenWidth,screenHeight));
         this.setBackground(Color.black);  //임시
         this.setDoubleBuffered(true);
@@ -33,13 +35,17 @@ public class StorePanel extends JPanel implements Runnable {
         this.setFocusable(true);
     }
     public void startGameThread(){
+
         storeThread=new Thread(this);
         storeThread.start();
+        System.out.println("startGameThread 실행");
     }
 
     @Override
     public void run() {
-        double drawInterval=1000000000/FPS;  //0.01666 seconds
+        System.out.println("startGameThread 실행");
+
+        double drawInterval= (double) 1000000000 /FPS;  //0.01666 seconds
         double nextDrawTime=System.nanoTime()+drawInterval;
         while (storeThread != null) {
             update();
@@ -73,4 +79,5 @@ public class StorePanel extends JPanel implements Runnable {
         g2.dispose();
 
     }
+
 }
